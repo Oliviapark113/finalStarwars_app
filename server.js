@@ -49,11 +49,24 @@ app.get('/', (req , res)=>{
 app.get('/api/characters',(req, res)=>{
       res.json(characters)
 }) 
-// /api/characters/lukeskywalker..  
-// /api/characters/:routeName
 
+//4. /api/characters/:routeName output: /api/characterslukeskywalker..  
 
+app.get('/api/characters/:routeName', (req, res)=>{
+    //to access to routeName .. we can have multiple params  
+    //such as /api/characters/:routeName/:count : 
+    // console.log(req.params)
+    const targetCharacter = req.params.routeName
+    //we have to access to correct routeName .. 
+    const character = characters.find(character =>{
+        return character.routeName === targetCharacter 
+        
+    })
+    console.log(character)
+    //just put res.end()for now to prevent server from running over and over again 
+    res.json(character)
 
+})
 
 
 
