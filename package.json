@@ -1,0 +1,14 @@
+{
+  "name": "16-starwasexpress",
+  "version": "1.0.0",
+  "description": "Starwas express app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oliviapark113",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
