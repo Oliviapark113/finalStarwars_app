@@ -26,7 +26,7 @@ const characters = [
     role:"Jedi Master",
     forcePoints: 10000,
     age: 40,
-    avatar:"https://static.wikia.nocookie.net/star-wars-canon-extended/images/2/2c/Luke_Sky7.jpg/revision/latest/scale-to-width-down/340?cb=20180123070942",
+    avatar:"https://c8.alamy.com/comp/2B8W8DA/star-wars-1977-lucasfilm20th-century-fox-film-with-mark-hamill-as-luke-skywalker-2B8W8DA.jpg",
     routeName:  "lukeskywalker"  // to be create dynamically
 
   },
