@@ -48,7 +48,7 @@ const characters = [
 
 //1.set up route for our homeroute 
 //'/' means homeroute but usually not shows if there is only home page .. takes cb "req" and "res"
-//-----------HTML ROUTE---------------
+//-----------HTML ROUTE---------------(/home route .. /add route)
 app.get('/', (req , res)=>{
    //recieve response and send to browser ...
    // res.send('May the force be with you')
@@ -57,6 +57,9 @@ app.get('/', (req , res)=>{
    //path.join(__dirname+'/public/index.html') - direct to correct path .
   
   res.sendFile(path.join(__dirname+'/public/index.html'))
+})
+app.get('/add', (req, res)=>{
+    res.sendFile(path.join(__dirname+'/public/add.html'))
 })
 // listen to this data(characters) and send data back to client.
 //there are two kinds 1. send to view in browser like html .. //3. send just data ...THAT IS API..prefix when sending
