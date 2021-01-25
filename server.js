@@ -8,8 +8,8 @@ const app = express()
 //copy and paste use for HW etc  any request ..boiler plate ..
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
-
-const PORT = 3000 //3000 is express.js suggestion .. 
+//for heroku use ..
+const PORT = process.env.PORT || 3000 //3000 is express.js suggestion .. 
 //2. create character array 
 const characters = [
 
