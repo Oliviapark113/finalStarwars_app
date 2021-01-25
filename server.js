@@ -2,6 +2,10 @@ const express = require('express')
 //exports all express function...
 const app = express()
 
+//copy and paste use for HW etc  any request ..boiler plate ..
+app.use(express.urlencoded({extended:true}))
+app.use(express.json())
+
 const PORT = 3000 //3000 is express.js suggestion .. 
 //2. create character array 
 const characters = [
@@ -36,6 +40,8 @@ const characters = [
 
 ]
 
+//---------------API ROUTES----------------
+
 //1.set up route for our homepage 
 //'/' means homeroute but usually not shows if there is only home page .. takes cb "req" and "res"
 app.get('/', (req , res)=>{
@@ -43,7 +49,7 @@ app.get('/', (req , res)=>{
     res.send('May the force be with you')
 })
 // listen to this data(characters) and send data back to client.
-//there are two kinds 1. send to view in browser like html .. 3. send just data ...THAT IS API..prefix when sending
+//there are two kinds 1. send to view in browser like html .. //3. send just data ...THAT IS API..prefix when sending
 //data only... /api
 // /api/chracters - show all characters data and recieve all characters data which is in json form
 app.get('/api/characters',(req, res)=>{
@@ -62,15 +68,19 @@ app.get('/api/characters/:routeName', (req, res)=>{
         return character.routeName === targetCharacter 
         
     })
-    console.log(character)
+ 
     //just put res.end()for now to prevent server from running over and over again 
     res.json(character)
 
 })
 
-
-
-
+app.post('api/characters/add', (req, res)=>{
+    console.log(req.body)
+    const newCharacter = req.body
+    console.log("test")
+    res.end()
+    
+})
 
 
 
