@@ -40,9 +40,11 @@ const characters = [
 
 ]
 
+//-----------HTML ROUTE---------------
+
 //---------------API ROUTES----------------
 
-//1.set up route for our homepage 
+//1.set up route for our homeroute 
 //'/' means homeroute but usually not shows if there is only home page .. takes cb "req" and "res"
 app.get('/', (req , res)=>{
    //recieve response and send to browser ...
@@ -74,17 +76,20 @@ app.get('/api/characters/:routeName', (req, res)=>{
 
 })
 
-app.post('api/characters/add', (req, res)=>{
-    // console.log(req.body)
+//add new Character
+
+app.post('/api/characters/add', (req, res)=>{
+    console.log(req.body)
     const newCharacter = req.body
     //regex .. make no spaces and convert to all loswer cases
     newCharacter.routeName = newCharacter.name.replace(/ /g,'').toLowerCase()
     characters.push(newCharacter)
+    console.log(characters)
     res.status(200).send()
     
 })
 
-var word = "foo is bar"
+ var word = "foo is bar"
  var word1= word.replace(/ /g, '')
  console.log(word1)
 
