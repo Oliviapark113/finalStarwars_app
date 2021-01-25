@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 
 //copy and paste use for HW etc  any request ..boiler plate ..
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 const PORT = 3000 //3000 is express.js suggestion .. 
@@ -75,13 +75,18 @@ app.get('/api/characters/:routeName', (req, res)=>{
 })
 
 app.post('api/characters/add', (req, res)=>{
-    console.log(req.body)
+    // console.log(req.body)
     const newCharacter = req.body
-    console.log("test")
-    res.end()
+    //regex .. make no spaces and convert to all loswer cases
+    newCharacter.routeName = newCharacter.name.replace(/ /g,'').toLowerCase()
+    characters.push(newCharacter)
+    res.status(200).send()
     
 })
 
+var word = "foo is bar"
+ var word1= word.replace(/ /g, '')
+ console.log(word1)
 
 
 //then we need to listen our server ..
